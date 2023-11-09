@@ -1,0 +1,12 @@
+# Persistent Volume Claim (PVC) for PostgreSQL data
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+  namespace: my-app-namespace-ruby
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

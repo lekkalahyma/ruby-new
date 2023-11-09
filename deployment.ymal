@@ -1,0 +1,21 @@
+# Deployment for your application (Update with your actual application details)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment
+  namespace: my-app-namespace-ruby
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app-container
+        image:  9989205150/ruby:latest
+        ports:
+        - containerPort: 80
